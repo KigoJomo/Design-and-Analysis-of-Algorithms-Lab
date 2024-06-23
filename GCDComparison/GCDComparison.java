@@ -1,8 +1,8 @@
 public class GCDComparison {
 
     public static void main(String[] args) {
-        int a = 123456;
-        int b = 789012;
+        int a = 14;
+        int b = 48;
 
         EuclideanAlgorithm euclidean = new EuclideanAlgorithm();
         MiddleSchoolMethod middleSchool = new MiddleSchoolMethod();
