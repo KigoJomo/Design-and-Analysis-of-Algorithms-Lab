@@ -1,11 +1,28 @@
 public class ConsecutiveIntegerChecking {
-    public int gcd(int a, int b) {
-        int gcd = 1;
-        for (int i = 1; i <= Math.min(a, b); i++) {
-            if (a % i == 0 && b % i == 0) {
-                gcd = i;
+    public int gcd(int... numbers) {
+        int min = findMin(numbers);
+        for (int i = min; i >= 1; i--) {
+            boolean isCommonDivisor = true;
+            for (int number : numbers) {
+                if (number % i != 0) {
+                    isCommonDivisor = false;
+                    break;
+                }
+            }
+            if (isCommonDivisor) {
+                return i;
             }
         }
-        return gcd;
+        return 1;
+    }
+
+    private int findMin(int... numbers) {
+        int min = numbers[0];
+        for (int number : numbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
     }
 }
